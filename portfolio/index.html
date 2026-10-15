@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>黄依静 · 数字化合规风控与流程效能主页 | Yijing Huang</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts: 衬线体、手写体与现代西文字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- 全局图片容错与安全回退处理器 (置于head确保图片加载失败时立即可用) -->
+  <script>
+    window.handleImgFallback = function(img, type) {
+      if (!img) return;
+      img.onerror = null; // 防止循环触发
+      const fallbacks = {
+        formal: 'https://placehold.co/400x533/FAF6F0/6E6255?text=%E9%BB%84%E4%BE%9D%E9%9D%99+%C2%B7+%E8%81%8C%E4%B8%9A%E7%85%A7',
+        flower: 'https://placehold.co/500x460/FAF6F0/6E6255?text=%E6%A0%A1%E5%9B%AD%E5%AE%9E%E8%B7%B5%E7%85%A7',
+        polaroid: 'https://placehold.co/300x400/163324/D2F801?text=%E7%94%9F%E6%B4%BB%E4%B8%8E%E8%B0%83%E7%A0%94%E5%89%AA%E5%BD%B1',
+        mountain: 'https://placehold.co/700x440/0F231A/D2F801?text=Staying+passionate'
+      };
+      if (fallbacks[type]) {
+        img.src = fallbacks[type];
+      }
+    };
+  </script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"PingFang SC"', '"Hiragino Sans GB"', 'sans-serif'],
+            serif: ['"Instrument Serif"', '"Noto Serif SC"', 'Georgia', 'serif'],
+            script: ['"Caveat"', 'cursive', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'Menlo', 'Consolas', 'monospace'],
+          },
+          colors: {
+            sand: {
+              50: '#FDFBF9',
+              100: '#FAF6F0',
+              200: '#F4EDE4',
+              300: '#EAE1D5',
+              400: '#D5C7B7',
+              700: '#6E6255',
+              900: '#2A241F',
+            },
+            forest: {
+              950: '#0F231A',
+              900: '#163324',
+              850: '#1C3A2B',
+              800: '#234635',
+              700: '#2E5843',
+            },
+            lime: {
+              400: '#D2F801',
+              500: '#BAE300',
+            },
+            ink: {
+              900: '#191716',
+              800: '#292524',
+              700: '#44403C',
+              600: '#57534E',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg-cream: #FAF7F2;
+      --card-white: #FFFFFF;
+      --border-warm: #E8E1D7;
+      --border-subtle: #F0EAE1;
+      --text-main: #201D1A;
+      --text-muted: #6C645C;
+      --accent-lime: #D2F801;
+      --accent-forest: #163324;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      overflow-x: hidden;
+    }
+
+    .border-warm {
+      border-color: var(--border-warm);
+    }
+    
+    .border-subtle {
+      border-color: var(--border-subtle);
+    }
+
+    .bg-card-paper {
+      background-color: var(--card-white);
+      box-shadow: 0 4px 20px -2px rgba(42, 36, 31, 0.05), 0 2px 6px -1px rgba(42, 36, 31, 0.03);
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* 手写体与荧光标记效果 */
+    .brush-underline {
+      position: relative;
+      display: inline-block;
+    }
+    .brush-underline::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      width: 100%;
+      height: 8px;
+      background-color: var(--accent-lime);
+      z-index: -1;
+      border-radius: 4px;
+    }
+
+    /* 图片平滑淡入 */
+    .smooth-img {
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body class="selection:bg-forest-900 selection:text-lime-400 font-sans antialiased text-ink-900">
+
+  <!-- 顶部导航栏 -->
+  <header class="sticky top-0 z-40 bg-[#FAF7F2]/90 backdrop-blur-md border-b border-warm transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-full bg-forest-900 text-lime-400 flex items-center justify-center font-serif text-lg font-bold group-hover:scale-105 transition-transform shadow-sm">
+          黄
+        </div>
+        <div>
+          <span class="font-serif text-xl font-bold tracking-tight text-ink-900">黄依静 · Yijing Huang</span>
+          <span class="hidden sm:inline-block text-[11px] font-mono tracking-wider text-sand-700 ml-2 uppercase">/ 985公管硕士 · ACCA 11门</span>
+        </div>
+      </a>
+
+      <!-- 快速导航 -->
+      <nav class="flex items-center gap-3 sm:gap-6">
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium text-sand-700">
+          <a href="#about" class="hover:text-forest-900 transition-colors">Who Am I?</a>
+          <a href="#services" class="hover:text-forest-900 transition-colors">专业方向</a>
+          <a href="#cases" class="hover:text-forest-900 transition-colors">实战成果</a>
+          <a href="#reviews" class="hover:text-forest-900 transition-colors">评价背书</a>
+        </div>
+
+        <button onclick="copyEmail()" class="px-4 py-2 rounded-full bg-forest-900 hover:bg-forest-950 text-lime-400 text-xs sm:text-sm font-mono tracking-tight shadow-sm transition-all flex items-center gap-1.5 hover:shadow">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+          <span>联系我 (Email)</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主体容器 -->
+  <main class="max-w-6xl mx-auto px-6 pt-10 sm:pt-16 pb-28">
+
+    <!-- 1. Hero 区域：Hi! + I'm 黄依静 + 荧光绿 EMAIL ME + 第一张形象照 -->
+    <section class="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-12 items-center mb-24 sm:mb-32">
+      
+      <!-- 左侧：Hi! I'm 黄依静 + 荧光绿按键 -->
+      <div class="md:col-span-6 space-y-6 sm:space-y-8 pr-0 sm:pr-4">
+        <div>
+          <!-- 草写亲切手写体 Hi! -->
+          <div class="font-script text-7xl sm:text-8xl text-ink-900 leading-none tracking-tight select-none">
+            Hi !
+          </div>
+          
+          <!-- I'm —— 黄依静 -->
+          <h1 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-ink-900 mt-2 flex items-baseline gap-2">
+            <span>I'm ——</span>
+            <span class="brush-underline">黄依静</span>
+          </h1>
+          
+          <p class="text-sm sm:text-base font-mono text-sand-700 mt-4 tracking-wide font-medium">
+            985公管硕士 / 旅游管理学士 · ACCA 11门
+          </p>
+        </div>
+
+        <div class="relative">
+          <p class="text-sand-700 text-base sm:text-lg leading-relaxed select-text m-0 p-0">
+            以严密逻辑立足，以数字化提效。聚焦业务合规风控、内审审查与流程重塑，擅长以客观证据链筑牢底线，用轻量自服务工具打破低效瓶颈。
+          </p>
+        </div>
+
+        <!-- 高亮荧光黄绿矩形 EMAIL ME 按钮 -->
+        <div class="pt-2 flex flex-wrap items-center gap-4">
+          <button onclick="copyEmail()" class="px-8 py-3.5 bg-lime-400 hover:bg-lime-500 text-forest-950 font-mono text-xs sm:text-sm font-bold tracking-wider uppercase rounded-sm shadow-md transition-all flex items-center gap-2 hover:-translate-y-0.5">
+            <span>EMAIL ME</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </button>
+          
+          <a href="#cases" class="px-6 py-3.5 border border-warm bg-white hover:bg-sand-100 text-ink-900 font-mono text-xs sm:text-sm font-medium rounded-sm transition-all flex items-center gap-2 shadow-sm">
+            <i data-lucide="folder-kanban" class="w-4 h-4 text-forest-700"></i>
+            <span>查阅交付底稿</span>
+          </a>
+        </div>
+
+        <div class="pt-4 flex flex-wrap gap-4 text-xs font-mono text-sand-700 border-t border-warm">
+          <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-forest-700"></i>北京 / 长沙 / 深圳 / 全国</span>
+          <span class="flex items-center gap-1.5"><i data-lucide="award" class="w-3.5 h-3.5 text-forest-700"></i>ACCA 11/13</span>
+          <span class="flex items-center gap-1.5"><i data-lucide="languages" class="w-3.5 h-3.5 text-forest-700"></i>雅思 6.5 · CET-6 (流利工作语言)</span>
+        </div>
+      </div>
+
+      <!-- 右侧：第一张正装形象照 -->
+      <div class="md:col-span-6 flex justify-center md:justify-end">
+        <div class="w-full max-w-md bg-white p-3 rounded-2xl border border-warm shadow-xl">
+          <div class="aspect-[3/4] w-full rounded-xl overflow-hidden bg-sand-200 relative group flex items-center justify-center">
+            <img 
+              id="hero-img"
+              src="https://i.ibb.co.com/gbTDqfXT/IMG-1086.jpg" 
+              alt="黄依静职业形象照" 
+              referrerpolicy="no-referrer"
+              class="w-full h-full object-cover object-top smooth-img group-hover:scale-105"
+              onerror="handleImgFallback(this, 'formal')"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-ink-900/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            
+            <!-- 本地相片快速选取/更换辅助器 -->
+            <label for="upload-hero-input" class="absolute bottom-3 right-3 px-3 py-1.5 rounded-full bg-forest-900/80 hover:bg-forest-900 text-lime-400 text-xs font-mono backdrop-blur-sm cursor-pointer shadow-md flex items-center gap-1.5 transition-all opacity-0 group-hover:opacity-100">
+              <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+              <span>本地替换</span>
+              <input type="file" id="upload-hero-input" accept="image/*" class="hidden" onchange="previewLocalImage(event, 'hero-img')">
+            </label>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 2. "Who Am I?" 板块：生活与实践剪影 -->
+    <section id="about" class="mb-24 sm:mb-32 p-8 sm:p-12 rounded-3xl bg-white border border-warm shadow-sm">
+      <div class="w-10 h-1 bg-lime-400 rounded-full mb-8"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <!-- 左侧：生活与调研剪影 (现调换为第二张图 8867bd58...) -->
+        <div class="lg:col-span-5 order-2 lg:order-1">
+          <div class="rounded-2xl overflow-hidden border border-warm shadow-md group relative bg-sand-100 min-h-[380px] sm:min-h-[460px] flex items-center justify-center">
+            <img 
+              id="about-img"
+              src="https://i.ibb.co.com/zhGfdMyX/8867bd581d2d363031b3edb2f0ac39.jpg" 
+              alt="黄依静生活与实践剪影" 
+              referrerpolicy="no-referrer"
+              class="w-full h-[380px] sm:h-[460px] object-cover object-center smooth-img group-hover:scale-105"
+              onerror="handleImgFallback(this, 'flower')"
+            />
+            
+            <label for="upload-about-input" class="absolute bottom-3 right-3 px-3 py-1.5 rounded-full bg-forest-900/85 hover:bg-forest-950 text-lime-400 text-xs font-mono backdrop-blur-sm cursor-pointer shadow-md flex items-center gap-1.5 transition-all opacity-0 group-hover:opacity-100 z-10">
+              <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+              <span>替换照片</span>
+              <input type="file" id="upload-about-input" accept="image/*" class="hidden" onchange="previewLocalImage(event, 'about-img')">
+            </label>
+          </div>
+          <div class="text-[11px] font-mono text-sand-700 mt-2 text-center">
+            校园学术调研与日常实践 · 保持真实、敏锐与热爱
+          </div>
+        </div>
+
+        <!-- 右侧：方案二文案 -->
+        <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+          <div class="text-xs font-mono tracking-widest uppercase text-forest-700 font-semibold">Who Am I? / 关于我</div>
+          
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink-900 leading-tight">
+            你好，我是黄依静。<br>
+            兼具制度大局观与微观敏锐度。
+          </h2>
+
+          <div class="space-y-4 text-sand-700 text-sm sm:text-base leading-relaxed">
+            <p>
+              我是黄依静，本科毕业于东北财经大学，现就读于<strong>中南大学公共管理硕士（985）</strong>，已通过英国注册会计师 <strong>ACCA 11 门科目</strong>。
+            </p>
+            <p>
+              我热衷于做一名业务流程的<strong>“把关人”与“改良者”</strong>：在券商内审，面对动辄数百页的采购材料，我严格按“文件-依据-疑点”三要素输出底稿，把潜在争议前置化解；在互联网大厂，我敏锐捕捉一线员工的查询痛点，自主搭建自服务表单与数据清洗管线，让服务链路变轻、变快。
+            </p>
+            <p class="font-medium text-ink-900">
+              严谨求证是我的底线，善用工具是我的习惯。期待用扎实的专业功底为团队守住安全防线，赋能业务顺畅前行。
+            </p>
+          </div>
+
+          <!-- 3 个细分资质卡片 -->
+          <div class="grid grid-cols-3 gap-3 pt-4 border-t border-subtle text-center">
+            <div class="p-3 rounded-xl bg-sand-100/70 border border-subtle">
+              <div class="text-xs font-mono text-sand-700">Master / 硕士</div>
+              <div class="font-bold text-xs sm:text-sm text-ink-900 mt-0.5">中南大学 (985)</div>
+            </div>
+            <div class="p-3 rounded-xl bg-sand-100/70 border border-subtle">
+              <div class="text-xs font-mono text-sand-700">Bachelor / 本科</div>
+              <div class="font-bold text-xs sm:text-sm text-ink-900 mt-0.5">东北财大 (Top 10%)</div>
+            </div>
+            <div class="p-3 rounded-xl bg-sand-100/70 border border-subtle">
+              <div class="text-xs font-mono text-sand-700">ACCA Exam</div>
+              <div class="font-bold text-xs sm:text-sm text-ink-900 mt-0.5">11 / 13 门已通过</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 核心专业专长与能力矩阵模块：复古拼贴拍立得照片组 -->
+    <section id="services" class="mb-24 sm:mb-32 p-8 sm:p-14 rounded-3xl bg-forest-900 text-white relative overflow-hidden shadow-2xl">
+      <div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-forest-700/30 blur-3xl pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+        <!-- 左侧标题与定位 -->
+        <div class="lg:col-span-4 space-y-4">
+          <div class="text-xs font-mono tracking-widest uppercase text-lime-400">Core Competencies / 核心专业专长</div>
+          <h2 class="text-3xl sm:text-5xl font-serif font-bold tracking-tight text-white leading-tight">
+            Professional<br>Focus
+          </h2>
+          <p class="text-xs sm:text-sm text-sand-300 leading-relaxed pt-2">
+            结合公共管理制度大局观、ACCA 财务内控素养与敏捷数字化思维，沉淀为三项扎实落地的核心业务能力。
+          </p>
+        </div>
+        <!-- 中间：复古拼贴拍立得照片组 (现调换为手捧鲜花校园实操图 IMG-1199) -->
+        <div class="lg:col-span-3 flex justify-center">
+          <div class="w-48 sm:w-56 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl transform hover:rotate-1 transition-transform duration-300 relative group bg-forest-950 min-h-[280px] flex items-center justify-center">
+            <img 
+              id="polaroid-img"
+              src="https://i.ibb.co.com/23BJ2mn4/IMG-1199.jpg" 
+              alt="校园实践与鲜花剪影" 
+              referrerpolicy="no-referrer"
+              class="w-full h-72 sm:h-80 object-cover object-center smooth-img"
+              onerror="handleImgFallback(this, 'polaroid')"
+            />
+            <label for="upload-polaroid-input" class="absolute bottom-2 right-2 px-2.5 py-1 rounded-full bg-black/70 hover:bg-black/90 text-lime-400 text-[10px] font-mono backdrop-blur-sm cursor-pointer shadow flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+              <i data-lucide="camera" class="w-3 h-3"></i>
+              <span>替换</span>
+              <input type="file" id="upload-polaroid-input" accept="image/*" class="hidden" onchange="previewLocalImage(event, 'polaroid-img')">
+            </label>
+          </div>
+        </div>
+
+        <!-- 右侧：三大核心能力维度 -->
+        <div class="lg:col-span-5 divide-y divide-white/10">
+          
+          <div class="py-5 first:pt-0 group">
+            <div class="flex items-center justify-between">
+              <h3 class="font-mono text-base sm:text-lg font-bold text-lime-400 group-hover:translate-x-1 transition-transform">
+                合规审查与内部审计 / Compliance & Audit
+              </h3>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-lime-400/60"></i>
+            </div>
+            <p class="text-xs sm:text-sm text-sand-300 mt-2 leading-relaxed">
+              对照内外规章复核 160+ 采购检查点，穿透排查利益关联与逻辑漏洞，构建“文件-依据-疑点”闭环留痕底稿台账。
+            </p>
+          </div>
+
+          <div class="py-5 group">
+            <div class="flex items-center justify-between">
+              <h3 class="font-mono text-base sm:text-lg font-bold text-lime-400 group-hover:translate-x-1 transition-transform">
+                流程重塑与数字化提效 / Process & Tooling
+              </h3>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-lime-400/60"></i>
+            </div>
+            <p class="text-xs sm:text-sm text-sand-300 mt-2 leading-relaxed">
+              敏锐捕捉一线服务断点，精通 Excel 数据清洗与自服务表单搭建，削减 60%+ 重复沟通并沉淀标准化规程。
+            </p>
+          </div>
+
+          <div class="py-5 last:pb-0 group">
+            <div class="flex items-center justify-between">
+              <h3 class="font-mono text-base sm:text-lg font-bold text-lime-400 group-hover:translate-x-1 transition-transform">
+                智能体应用与综合统筹 / Innovation & Ops
+              </h3>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-lime-400/60"></i>
+            </div>
+            <p class="text-xs sm:text-sm text-sand-300 mt-2 leading-relaxed">
+              运用扣子搭建智能体长文本处理工作流提效 80%+；具备百人政校会议跨团队应急调度与 70+ 篇新媒体运营经验。
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 精选实战案例卡片 -->
+    <section id="cases" class="mb-24 sm:mb-32">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+        <div>
+          <div class="text-xs font-mono tracking-widest text-forest-700 font-semibold mb-2">实战案例与成果落地</div>
+          <h2 class="text-3xl sm:text-5xl font-serif text-ink-900 tracking-tight">深入业务实战的案例</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="filterProjects('all')" id="tab-all" class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-forest-900 text-lime-400 font-medium transition-all">全部</button>
+          <button onclick="filterProjects('audit')" id="tab-audit" class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-sand-100 text-sand-700 hover:bg-sand-200 transition-all">合规风控</button>
+          <button onclick="filterProjects('tooling')" id="tab-tooling" class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-sand-100 text-sand-700 hover:bg-sand-200 transition-all">数字化提效</button>
+          <button onclick="filterProjects('ops')" id="tab-ops" class="px-3.5 py-1.5 rounded-full text-xs font-mono bg-sand-100 text-sand-700 hover:bg-sand-200 transition-all">统筹运营</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
+
+        <!-- 案例 1: 财信证券采购审计 (Audit) -->
+        <div class="project-card audit p-8 rounded-3xl bg-white border border-warm hover:border-forest-700 transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-md">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between text-xs font-mono text-sand-700">
+              <span class="px-2.5 py-0.5 rounded-full bg-sand-100 border border-subtle">财信证券股份有限公司</span>
+              <span>2026.06 - 2026.09</span>
+            </div>
+            <h3 class="text-2xl font-serif font-bold text-ink-900 group-hover:text-forest-700 transition-colors">
+              采购专项审计、穿透复核与留痕底稿台账
+            </h3>
+            <p class="text-sand-700 text-sm leading-relaxed">
+              参与公司 2025Q1-2026Q1 采购专项审计，覆盖竞争性磋商、谈判、单一来源等 19 个重大项目与 160+ 项检查点。运用企查查穿透核查供应商股权关联关系与社保缴纳；复核专家打分与二次竞标资格，敏锐识别“专家未按标准扣分”、“违规排除供应商”等逻辑异常并形成完整底稿证据链。
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-sand-100 text-forest-800 border border-warm">19 个重大项目</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-sand-100 text-forest-800 border border-warm">160+ 检查点</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-sand-100 text-forest-800 border border-warm">企查查股权穿透</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-sand-100 text-forest-800 border border-warm">三要素审阅留痕</span>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-subtle flex items-center justify-between">
+            <span class="text-xs font-mono text-sand-700">角色：内部审计实习生 | 稽核审计部</span>
+            <button onclick="openModal('caixin')" class="text-xs font-mono font-bold text-forest-800 flex items-center gap-1 hover:underline">
+              <span>阅读完整复盘</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 案例 2: 芒果TV自服务表单 (Tooling) -->
+        <div class="project-card tooling p-8 rounded-3xl bg-white border border-warm hover:border-forest-700 transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-md">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between text-xs font-mono text-sand-700">
+              <span class="px-2.5 py-0.5 rounded-full bg-sand-100 border border-subtle">湖南快乐阳光 (芒果TV)</span>
+              <span>2025.12 - 2026.02</span>
+            </div>
+            <h3 class="text-2xl font-serif font-bold text-ink-900 group-hover:text-forest-700 transition-colors">
+              补贴进度在线自服务查询工具与规范流程沉淀
+            </h3>
+            <p class="text-sand-700 text-sm leading-relaxed">
+              面对 1000+ 份补贴材料与 7 个社群的海量重复咨询，跳出机械的人工挨个解答模式。通过数据透视表进行答疑文本聚类分析，自发搭建脱敏“进度自服务在线查询表单”，重复咨询骤降 60%+；对 39 位被驳回材料精准追踪辅导，保障 330 位实习生材料 100% 全量合规打通并沉淀出标准操作规程。
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-sand-100 text-forest-800 border border-warm">咨询骤降 60%+</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-sand-100 text-forest-800 border border-warm">1000+ 数据清洗</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-sand-100 text-forest-800 border border-warm">39 例异常全挽回</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-sand-100 text-forest-800 border border-warm">标准流程沉淀</span>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-subtle flex items-center justify-between">
+            <span class="text-xs font-mono text-sand-700">角色：人力资源实习生 | 人力资源部</span>
+            <button onclick="openModal('mangotv')" class="text-xs font-mono font-bold text-forest-800 flex items-center gap-1 hover:underline">
+              <span>阅读完整复盘</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 案例 3: 券商案例库搭建与AI提效 (Audit & Tooling) -->
+        <div class="project-card tooling audit p-8 rounded-3xl bg-white border border-warm hover:border-forest-700 transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-md">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between text-xs font-mono text-sand-700">
+              <span class="px-2.5 py-0.5 rounded-full bg-sand-100 border border-subtle">财信证券股份有限公司</span>
+              <span>2026.06 - 2026.09</span>
+            </div>
+            <h3 class="text-2xl font-serif font-bold text-ink-900 group-hover:text-forest-700 transition-colors">
+              合规案例库建设、AI提效与培训材料输出
+            </h3>
+            <p class="text-sand-700 text-sm leading-relaxed">
+              从监管官网与行业公众号搜集 110 个采购违规案例，经交叉比对与多维筛选沉淀出 35 个典型样本完成风险分类；搭建扣子（Coze）智能体工作流，实现全市场 100 家券商特色长文本的秒级抽取与归纳，结合人工抽检防范幻觉；主导输出 40+ 页合规宣讲课件，为部门培训提供成体系支撑。
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-sand-100 text-forest-800 border border-warm">110 个违规案例搜集</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-sand-100 text-forest-800 border border-warm">35 个典型风险分类</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-sand-100 text-forest-800 border border-warm">100 家券商长文解析</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-sand-100 text-forest-800 border border-warm">40+ 页合规课件输出</span>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-subtle flex items-center justify-between">
+            <span class="text-xs font-mono text-sand-700">角色：内部审计实习生 | 稽核审计部</span>
+            <button onclick="openModal('coze')" class="text-xs font-mono font-bold text-forest-800 flex items-center gap-1 hover:underline">
+              <span>阅读完整复盘</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 案例 4: 学术研讨会与新媒体运营 (Ops) -->
+        <div class="project-card ops p-8 rounded-3xl bg-white border border-warm hover:border-forest-700 transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-md">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between text-xs font-mono text-sand-700">
+              <span class="px-2.5 py-0.5 rounded-full bg-sand-100 border border-subtle">中南大学乡村振兴研究中心</span>
+              <span>2024.09 - 2025.12</span>
+            </div>
+            <h3 class="text-2xl font-serif font-bold text-ink-900 group-hover:text-forest-700 transition-colors">
+              政校大型会议应急调度统筹与官方媒体矩阵
+            </h3>
+            <p class="text-sand-700 text-sm leading-relaxed">
+              搭建在线回执系统统筹 80+ 位专家领导行程与 800+ 参会数据。在会务闭幕车队运力滞后的高压突发下，果断重构调度链路、拉起动态看板实时销项，保障专家学者零延误送达；日常独立主导中心官方微信公众号，发文 70+ 篇，单篇最高阅读突破 2000+。
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-sand-100 text-forest-800 border border-warm">80+ 专家 0 延误</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-sand-100 text-forest-800 border border-warm">800+ 参会数据</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-sand-100 text-forest-800 border border-warm">动态销项看板</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-sand-100 text-forest-800 border border-warm">70+ 篇推文运营</span>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-subtle flex items-center justify-between">
+            <span class="text-xs font-mono text-sand-700">角色：核心团队成员 · 会务统筹负责人</span>
+            <button onclick="openModal('conference')" class="text-xs font-mono font-bold text-forest-800 flex items-center gap-1 hover:underline">
+              <span>阅读完整复盘</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. Client Reviews 评价与声音模块 -->
+    <section id="reviews" class="mb-24 sm:mb-32">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="w-8 h-1 bg-lime-400 mx-auto rounded-full mb-3"></div>
+        <h2 class="text-3xl sm:text-4xl font-serif text-ink-900 tracking-tight">合作评价与团队声音</h2>
+        <p class="text-sand-700 text-xs sm:text-sm mt-2">曾共事的带教导师、业务负责人与团队伙伴眼中的 我</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- 评价 1: 券商导师 -->
+        <div class="p-8 rounded-3xl bg-white border border-warm flex flex-col justify-between space-y-6 shadow-sm hover:shadow-md transition-all">
+          <div class="space-y-5">
+            <div class="flex items-center justify-between">
+              <div class="w-8 h-8 rounded-full bg-sand-100 flex items-center justify-center text-forest-800">
+                <i data-lucide="quote" class="w-4 h-4"></i>
+              </div>
+              <div class="w-6 h-1 bg-lime-400 rounded-full"></div>
+            </div>
+            <p class="text-sand-700 text-xs sm:text-sm leading-relaxed italic">
+              “面对复杂的招标卷宗与制度条款，她不仅查清了 160+ 个检查点，更敏锐挖掘出打分与二次竞标逻辑漏洞，构建了可完整追溯的审计底稿留痕链条。”
+            </p>
+          </div>
+          <div class="border-t border-subtle pt-4">
+            <div class="font-bold text-xs sm:text-sm text-ink-900 uppercase tracking-wider">项目主审指导人</div>
+            <div class="text-[11px] font-mono text-sand-700 mt-0.5">财信证券 · 稽核审计部</div>
+          </div>
+        </div>
+
+        <!-- 评价 2: 芒果TV负责人 -->
+        <div class="p-8 rounded-3xl bg-white border border-warm flex flex-col justify-between space-y-6 shadow-sm hover:shadow-md transition-all">
+          <div class="space-y-5">
+            <div class="flex items-center justify-between">
+              <div class="w-8 h-8 rounded-full bg-sand-100 flex items-center justify-center text-forest-800">
+                <i data-lucide="quote" class="w-4 h-4"></i>
+              </div>
+              <div class="w-6 h-1 bg-lime-400 rounded-full"></div>
+            </div>
+            <p class="text-sand-700 text-xs sm:text-sm leading-relaxed italic">
+              “跳出被动答疑惯性，从0到1自建在线查询表单并沉淀出标准化 SOP，直接释放了团队过半咨询压力，展现出稀缺的用户触点洞察与敏捷工具落地力。”
+            </p>
+          </div>
+          <div class="border-t border-subtle pt-4">
+            <div class="font-bold text-xs sm:text-sm text-ink-900 uppercase tracking-wider">SSC 业务负责人</div>
+            <div class="text-[11px] font-mono text-sand-700 mt-0.5">芒果TV · 人力资源部</div>
+          </div>
+        </div>
+
+        <!-- 评价 3: 会务与课题导师 -->
+        <div class="p-8 rounded-3xl bg-white border border-warm flex flex-col justify-between space-y-6 shadow-sm hover:shadow-md transition-all">
+          <div class="space-y-5">
+            <div class="flex items-center justify-between">
+              <div class="w-8 h-8 rounded-full bg-sand-100 flex items-center justify-center text-forest-800">
+                <i data-lucide="quote" class="w-4 h-4"></i>
+              </div>
+              <div class="w-6 h-1 bg-lime-400 rounded-full"></div>
+            </div>
+            <p class="text-sand-700 text-xs sm:text-sm leading-relaxed italic">
+              “在时间紧迫、行程多变的政校大型会议中，面对运力断档果断重构调度链路，建立动态共享看板，保障近百位学者零延误准时到场。”
+            </p>
+          </div>
+          <div class="border-t border-subtle pt-4">
+            <div class="font-bold text-xs sm:text-sm text-ink-900 uppercase tracking-wider">会务指导老师</div>
+            <div class="text-[11px] font-mono text-sand-700 mt-0.5">中南大学 · 乡村振兴中心</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. 底部结语区与联系方式 -->
+    <section class="rounded-3xl bg-forest-900 text-white overflow-hidden shadow-2xl border border-forest-800">
+      <div class="grid grid-cols-1 md:grid-cols-12 items-stretch">
+        
+        <!-- 左侧：联系通道 -->
+        <div class="md:col-span-5 p-8 sm:p-12 flex flex-col justify-between space-y-8">
+          <div class="space-y-5 text-xs font-mono text-sand-300">
+            <div>
+              <div class="text-[10px] text-lime-400 uppercase tracking-widest">PHONE / 电话</div>
+              <div class="text-sm text-white font-bold mt-0.5">(+86) 137-6251-4719</div>
+            </div>
+            <div>
+              <div class="text-[10px] text-lime-400 uppercase tracking-widest">EMAIL / 邮箱</div>
+              <div class="text-sm text-white font-bold mt-0.5">huangyijing03@163.com</div>
+            </div>
+            <div>
+              <div class="text-[10px] text-lime-400 uppercase tracking-widest">CURRENT STATUS / 求职意向</div>
+              <div class="text-sm text-white font-bold mt-0.5">2027届校园招聘 / 流程管理 · 合规内审 · 人力资源 · 业务风控</div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <button onclick="copyContact()" class="w-full py-3 bg-lime-400 hover:bg-lime-500 text-forest-950 font-mono text-xs font-bold tracking-wider uppercase rounded-sm transition-all flex items-center justify-center gap-2 shadow">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>复制全套联系方式</span>
+            </button>
+          </div>
+        </div>
+        <!-- 右侧：开阔山顶眺望城市实景摄影 (footer-img - 第四张图) -->
+        <div class="md:col-span-7 bg-forest-950 min-h-[320px] sm:min-h-[440px] relative group overflow-hidden flex items-center justify-center">
+          <img 
+            id="footer-img"
+            src="https://i.ibb.co.com/Q36hHc4V/2026-10-01-18-29-41.png" 
+            alt="山顶眺望舒展生活照" 
+            referrerpolicy="no-referrer"
+            class="w-full h-full object-cover object-center smooth-img transition-transform duration-700 group-hover:scale-105"
+            onerror="handleImgFallback(this, 'mountain')"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-forest-950/60 via-transparent to-transparent"></div>
+          
+          <label for="upload-footer-input" class="absolute top-4 right-4 px-3 py-1.5 rounded-full bg-black/60 hover:bg-black/80 text-lime-400 text-xs font-mono backdrop-blur-sm cursor-pointer shadow-md flex items-center gap-1.5 transition-all opacity-0 group-hover:opacity-100 z-20">
+            <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+            <span>本地替换</span>
+            <input type="file" id="upload-footer-input" accept="image/*" class="hidden" onchange="previewLocalImage(event, 'footer-img')">
+          </label>
+
+          <div class="absolute bottom-6 right-6 text-right z-10">
+            <div class="text-xs font-mono text-sand-200 tracking-wide">Staying passionate about life and profession</div>
+            <div class="text-[11px] font-mono text-lime-400">© 2026 Yijing Huang</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 案例详细复盘弹窗 (Modal) -->
+  <div id="project-modal" class="fixed inset-0 bg-ink-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white border border-warm w-full max-w-2xl rounded-3xl p-6 sm:p-8 max-h-[85vh] overflow-y-auto no-scrollbar shadow-2xl relative">
+      <button onclick="closeModal()" class="absolute top-6 right-6 p-2 rounded-full border border-warm hover:bg-sand-100 transition-colors" aria-label="关闭">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div id="modal-content" class="space-y-6">
+        <!-- 动态注入案例内容 -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 浮动通知 Toast -->
+  <div id="toast" class="fixed bottom-6 right-6 px-4 py-3 rounded-2xl bg-forest-900 text-lime-400 text-xs sm:text-sm font-mono shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2 z-50 border border-forest-700">
+    <i data-lucide="check" class="w-4 h-4 text-lime-400"></i>
+    <span id="toast-msg">已复制！随时欢迎来信</span>
+  </div>
+
+  <script>
+    // 初始化 Lucide 图标
+    lucide.createIcons();
+
+    // 本地图片选择并实时渲染
+    function previewLocalImage(event, targetImgId) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const imgEl = document.getElementById(targetImgId);
+          if (imgEl) {
+            imgEl.style.display = 'block';
+            imgEl.src = e.target.result;
+            imgEl.style.opacity = '1';
+            showToast('照片已成功更新呈现！');
+          }
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    // 案例详情数据中心
+    const projectDetails = {
+      'caixin': {
+        title: '财信证券 · 采购专项审计与风险穿透',
+        role: '内部审计实习生 | 稽核审计部 (2026.06 - 2026.09)',
+        metrics: [
+          { label: '项目覆盖', val: '19 个采购项目' },
+          { label: '检查点', val: '160+ 个细分卡点' },
+          { label: '线索工具', val: '企查查股权穿透' },
+          { label: '底稿标准', val: '“文件-依据-疑点”' }
+        ],
+        body: `
+          <h4 class="font-serif font-bold text-base text-ink-900 mb-2">业务背景与目标</h4>
+          <p class="text-sm text-sand-700 leading-relaxed mb-4">参与公司 2025Q1-2026Q1 采购管理专项审计，重点覆盖竞争性磋商、竞争性谈判与单一来源等重大采购项目，防范合规失范、程序瑕疵与利益输送隐患。</p>
+          
+          <h4 class="font-serif font-bold text-base text-ink-900 mb-2">实操动作与突破</h4>
+          <ul class="text-sm text-sand-700 space-y-2 mb-4 list-disc list-inside">
+            <li><strong>外规与打分复核：</strong>对照招投标法律条例与公司内控制度，复核专家打分表与二次竞标资格，敏锐识别“专家未按标准扣分”、“不合规排除供应商”等逻辑漏洞并做红字标记；</li>
+            <li><strong>关联关系穿透：</strong>运用企查查工具核查投标方股东结构、关联方关系与社保缴纳情况，排查潜在利益冲突；</li>
+            <li><strong>三要素底稿留痕：</strong>严格按照“文件-依据-疑点”三要素输出审阅留痕底稿台账，确保异常有截图、有出处、可追溯；</li>
+            <li><strong>全景制度台账：</strong>梳理 HR 历史规章建立全景台账；协助 IT 审计外包招标，拟定立项报告与竞争性磋商全套招标文件。</li>
+          </ul>
+
+          <h4 class="font-serif font-bold text-base text-ink-900 mb-2">核心成效与思考</h4>
+          <p class="text-sm text-sand-700 leading-relaxed">建立起严密的审计证据链与合规留痕意识。面对同事关于专家自由裁量权的分歧，不进行主观对立，而是拿出对照表客观推演法律诉讼风险，推动问题作为审议逻辑疑点列入重点追踪台账。</p>
+        `
+      },
+      'mangotv': {
+        title: '芒果TV · 补贴申报全流程重构与自服务表单',
+        role: 'HR SSC 实习生 | 人力资源部 (2025.12 - 2026.02)',
+        metrics: [
+          { label: '数据清洗', val: '1000+ 份申请数据' },
+          { label: '咨询降幅', val: '重复咨询降 60%+' },
+          { label: '材料合规', val: '330人 990+文档' },
+          { label: '异常挽回', val: '39人 100% 打通' }
+        ],
+        body: `
+          <h4 class="font-serif font-bold text-base text-ink-900 mb-2">痛点洞察</h4>
+          <p class="text-sm text-sand-700 leading-relaxed mb-4">面对 1000+ 份补贴材料与 7 个社群，每天充斥着海量“审核到哪一步”的碎片化提问，传统人工 1 对 1 回复占用 50%+ 精力且信息依然滞后。</p>
+          
+          <h4 class="font-serif font-bold text-base text-ink-900 mb-2">从 0 到 1 轻量工具重塑</h4>
+          <ul class="text-sm text-sand-700 space-y-2 mb-4 list-disc list-inside">
+            <li><strong>帕累托归因：</strong>利用 Excel 对连续 3 天的社群答疑进行聚类，锁定 80% 问题集中在“进度节点与驳回原因”；</li>
+            <li><strong>表单设计与数据脱敏：</strong>自发利用在线工具搭建“自服务查询表单”，屏蔽敏感薪酬字段，仅凭工号与姓名末位匹配查询；</li>
+            <li><strong>39 例异常逐一挽回：</strong>对园区驳回的 39 位实习生 1 对 1 发送标注示范长图指导补正，全量打通申报；</li>
+            <li><strong>标准化 SOP 沉淀：</strong>撰写完整交付 SOP，被部门采纳为后续批次实习生的固定运维规范。</li>
+          </ul>
+        `
+      },
+      'coze': {
+        title: '扣子 (Coze) 智能体赋能长文本案例库建设',
+        role: 'AI 场景应用探索与流程提效 (L2 场景层)',
+        metrics: [
+          { label: '提炼时效', val: '数周压缩至 2-3 天' },
+          { label: '样本覆盖', val: '100 家券商年报' },
+          { label: '风险案例', val: '35 个精选样本' },
+          { label: '宣讲材料', val: '40+ 页合规 PPT' }
+        ],
+        body: `
+          <h4 class="font-serif font-bold text-base text-ink-900 mb-2">应用场景与痛点</h4>
+          <p class="text-sm text-sand-700 leading-relaxed mb-4">需对全行业 100 家证券公司的特色文化建设报告与 110 个违规案例进行地毯式整理，纯人工通读耗时数周且关键信息容易漏检。</p>
+          
+          <h4 class="font-serif font-bold text-base text-ink-900 mb-2">智能体工作流设计</h4>
+          <ul class="text-sm text-sand-700 space-y-2 mb-4 list-disc list-inside">
+            <li><strong>编排 Agent 工作流：</strong>在扣子（Coze）中搭建长文档解析节点，通过结构化 Prompt 约束输出为 5 维标准卡片（券商名-领域-打法-亮点-风险）；</li>
+            <li><strong>人机协同防幻觉：</strong>AI 秒级提取初稿后，人工针对核心财务及合规指标与原始披露材料进行抽检交叉比对，兼顾速度与严谨度；</li>
+            <li><strong>成果赋能：</strong>精选 35 个采购风险典型案例，独立制作并输出了 40 余页合规宣讲 PPT。</li>
+          </ul>
+        `
+      },
+      'conference': {
+        title: '乡村振兴中心 · 百人学术研讨会与新媒体运营',
+        role: '核心团队成员 · 会务统筹负责人 (2024.09 - 2025.12)',
+        metrics: [
+          { label: '专家统筹', val: '80+ 位领导学者' },
+          { label: '参会数据', val: '800+ 参会记录' },
+          { label: '新媒体运营', val: '70+ 篇原创推文' },
+          { label: '最高阅读', val: '2000+ 峰值' }
+        ],
+        body: `
+          <h4 class="font-serif font-bold text-base text-ink-900 mb-2">重大突发调度破局</h4>
+          <p class="text-sm text-sand-700 leading-relaxed mb-4">在地方承办的百人学术研讨会闭幕日，因高铁站车程达 1.5 小时且地方对接人员信息滞后，车队运力出现撞车与脱节风险。我果断判定“防范学者延误”为唯一 P0 优先级，主动对接县政府负责人申请直接调度车队队长，拉起线上动态看板实时销项，最终实现所有专家零延误返程。</p>
+          
+          <h4 class="font-serif font-bold text-base text-ink-900 mb-2">新媒体与常态化运营</h4>
+          <p class="text-sm text-sand-700 leading-relaxed">独立主导中心官方微信公众号运营，累计撰写发布 70 余篇文章，设计推文视觉排版与政策解读，平均阅读量提升 10%，单篇最高阅读突破 2000+。</p>
+        `
+      }
+    };
+
+    // 模态弹窗控制
+    function openModal(id) {
+      const data = projectDetails[id];
+      if (!data) return;
+
+      const modal = document.getElementById('project-modal');
+      const content = document.getElementById('modal-content');
+
+      let metricsHtml = data.metrics.map(m => `
+        <div class="p-3 rounded-2xl bg-sand-100/70 border border-subtle text-center">
+          <div class="text-xs text-sand-700 font-mono">${m.label}</div>
+          <div class="font-bold text-sm sm:text-base text-ink-900 mt-0.5">${m.val}</div>
+        </div>
+      `).join('');
+
+      content.innerHTML = `
+        <div>
+          <div class="text-xs font-mono inline-block px-2.5 py-0.5 rounded-full mb-2 bg-sand-200 text-forest-900">${data.role}</div>
+          <h3 class="text-2xl sm:text-3xl font-serif font-bold text-ink-900 tracking-tight">${data.title}</h3>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 py-3 border-y border-subtle">
+          ${metricsHtml}
+        </div>
+        <div class="pt-2">
+          ${data.body}
+        </div>
+      `;
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('project-modal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('project-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    // 筛选 Tab
+    function filterProjects(category) {
+      const cards = document.querySelectorAll('.project-card');
+      const tabs = ['all', 'audit', 'tooling', 'ops'];
+
+      tabs.forEach(t => {
+        const btn = document.getElementById(`tab-${t}`);
+        if (t === category) {
+          btn.className = "px-3.5 py-1.5 rounded-full text-xs font-mono bg-forest-900 text-lime-400 font-medium transition-all";
+        } else {
+          btn.className = "px-3.5 py-1.5 rounded-full text-xs font-mono bg-sand-100 text-sand-700 hover:bg-sand-200 transition-all";
+        }
+      });
+
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // 复制联系方式
+    function copyEmail() {
+      const email = 'huangyijing03@163.com';
+      copyTextToClipboard(email, '已复制邮箱：' + email);
+    }
+
+    function copyContact() {
+      const text = '黄依静 | 电话: (+86)137-6251-4719 | 邮箱: huangyijing03@163.com';
+      copyTextToClipboard(text, '已复制黄依静的全套联系方式！');
+    }
+
+    function copyTextToClipboard(text, successMsg) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(successMsg);
+        }).catch(() => {
+          fallbackCopyText(text, successMsg);
+        });
+      } else {
+        fallbackCopyText(text, successMsg);
+      }
+    }
+
+    function fallbackCopyText(text, successMsg) {
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        showToast(successMsg);
+      } catch (err) {
+        showToast('复制失败，请手动添加');
+      }
+      document.body.removeChild(textArea);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-msg');
+      toastMsg.innerText = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2500);
+    }
+
+    // ESC 键关闭 Modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+</body>
+</html>
